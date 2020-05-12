@@ -16,10 +16,15 @@ function App() {
   const handleSubmit = e =>{
     e.preventDefault()
     dispatch({type:'ADD_TODO', payload: entry})
+    setEntry('')
   }
 
   const toggleComplete = (id)=>{
     dispatch({type:'TOGGLE_COMPLETE', payload:id})
+  }
+
+  const clearCompleted = e =>{
+    dispatch({type: 'CLEAR_COMPLETED'})
   }
 
   return (
@@ -33,6 +38,7 @@ function App() {
         onSubmit={handleSubmit}
         inputChange={inputChange}
         entry={entry}
+        clearCompleted={clearCompleted}
       />
     </div>
   );

@@ -20,7 +20,7 @@ function ToDoForm(props) {
         />
       </form>
 
-      <button>
+      <button onClick={props.clearCompleted}>
         Clear Completed
       </button>
     </div>

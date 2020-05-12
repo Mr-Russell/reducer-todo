@@ -19,7 +19,9 @@ export function reducer(state, action){
         }
       ]
       case 'TOGGLE_COMPLETE':
-        return state.map(item =>item.id === action.payload ? {...item, completed: !item.completed} : item)
+        return state.map(item => item.id === action.payload ? {...item, completed: !item.completed} : item)
+      case 'CLEAR_COMPLETED':
+        return state.filter(item => !item.completed)
     default:
       return state
   }
